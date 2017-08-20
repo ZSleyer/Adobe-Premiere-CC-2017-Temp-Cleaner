@@ -1,4 +1,4 @@
-:: Adobe Premiere CC 2017 Temp-Cleaner v0.1
+:: Adobe Photoshop CC 2017.1.1 tempzxp* & Premiere CC 2017.1.2 Temp-Cleaner v0.2
 ::
 :: MIT License
 :: 
@@ -23,22 +23,28 @@
 :: SOFTWARE.
 @echo off
 color 4F
-title Adobe Premiere CC 2017.1.2 Temp-Cleaner v0.1
+title Adobe Photoshop CC 2017.1.1 und Premiere CC 2017.1.2 Temp-Cleaner v0.2
 cls
 for /L %%A in (4,-1,0) do (
-	echo ++++++++++++++++++++++++++++++++++++++++++++++++
-	echo +++ Adobe Premiere CC 2017 Temp-Cleaner v0.1 +++
-	echo ++++++++++++++++++++++++++++++++++++++++++++++++
+	echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	echo +++ Adobe Photoshop CC 2017.1.1 und Premiere CC 2017.1.2 Temp-Cleaner v0.2 +++
+	echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	echo Hinweis: Bitte stelle sicher, dass du die
 	echo Benutzerdefinierten Pfade richtig gesetzt hast!
 	echo Das Programm wird ausgefuehrt in %%A Sekunden... 
 	ping localhost -n 2 >nul 
 	cls
 )
-echo ++++++++++++++++++++++++++++++++++++++++++++++++
-echo +++ Adobe Premiere CC 2017 Temp-Cleaner v0.1 +++
-echo ++++++++++++++++++++++++++++++++++++++++++++++++
+echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo +++ Adobe Photoshop CC 2017.1.1 und Premiere CC 2017.1.2 Temp-Cleaner v0.2 +++
+echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo cleaning Adobe Photoshop CC 2017.1.1 tempzxp...
 :: BITTE BENUTZERDEFINIERTE PFADE RICHTIG EINGEBEN!
+for /f "tokens=*" %%a in ('dir C:\Users\chadi\AppData\Local\tempzxp*. /ad /b') do robocopy "C:\Users\chadi\AppData\Local\%%a" "%temp%\%%a" /E /R:1 /W:1 /MOVE
+::Delete Adobe Photoshop Temp
+rd %temp% /s /q
+md %temp%
+echo cleaning Adobe Premiere CC 2017.1.2 temp...
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Adobe Media Encoder Audio Previews" /s /q
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Adobe Media Encoder Preview Files" /s /q
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Premiere Pro Audio Previews" /s /q
@@ -46,7 +52,7 @@ rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Premiere Pro Captured Audio
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Premiere Pro Captured Video" /s /q
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Premiere Pro Video Previews" /s /q
 rd "D:\chadi\Documents\Adobe\Premiere Pro\11.0\Adobe Premiere Pro Preview Files" /s /q
-::Delete AdobeTemp
+::Delete Adobe Premiere Temp
 rd "%appdata%\Adobe\Common\Media Cache" /s /q
 md "%appdata%\Adobe\Common\Media Cache"
 rd "%appdata%\Adobe\Common\Media Cache Files" /s /q
@@ -59,9 +65,9 @@ rd "%appdata%\Adobe\Common\Team Projects Cache" /s /q
 md "%appdata%\Adobe\Common\Team Projects Cache"
 cls
 for /L %%A in (3,-1,0) do (
-	echo ++++++++++++++++++++++++++++++++++++++++++++++++
-	echo +++ Adobe Premiere CC 2017 Temp-Cleaner v0.1 +++
-	echo ++++++++++++++++++++++++++++++++++++++++++++++++
+	echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	echo +++ Adobe Photoshop CC 2017.1.1 und Premiere CC 2017.1.2 Temp-Cleaner v0.2 +++
+	echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	echo Temporaere Dateien wurden erfolgreich geloescht!
 	echo Programm schliesst sich in %%A Sekunden... 
 	ping localhost -n 2 >nul
